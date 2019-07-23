@@ -125,6 +125,11 @@ def train(iteration):
         valid_rmse.append(valid_result)
         test_recall.append(recall_result)
         print('valid={:.5f}, recall={:.5}'.format(valid_result, recall_result))
+
+        if len(valid_rmse) >= 5 and valid_rmse[epoch] > valid_rmse[epoch - 1] > valid_rmse[epoch - 2] > \
+                valid_rmse[epoch - 3] > valid_rmse[epoch - 4]:
+            break
+
         if args.save:
             pfm.cpu()
             torch.save(pfm.state_dict(),
@@ -172,7 +177,7 @@ if __name__ == "__main__":
                         help='enables CUDA training')
     parser.add_argument('--dir', help='dataset directory',
                         default='../dataset')
-    parser.add_argument('-d', '--dataset', help='specify dataset', type=str, default='test')
+    parser.add_argument('-d', '--dataset', help='specify dataset', type=str, default='movielens')
     parser.add_argument('-k', help='parameter k', type=int, default=64)
     parser.add_argument('--lr1', help='learning rate for weights', type=float, default=1e-3)
     parser.add_argument('--lr2', help='learning rate for probability', type=float, default=1e-2)
