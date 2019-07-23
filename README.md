@@ -8,11 +8,13 @@ Bayesian personalized feature interaction selection
 - pytorch >= 1.0
 
 ## Running
-### check the running parameters
+### Check the running parameters
 ```python
 python personal.py -h
 ```
-### sample run
+### Sample run
+
+Please unzip movielens.zip and run the following:
 
 ```python
 cd code
