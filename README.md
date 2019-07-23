@@ -3,6 +3,7 @@ Bayesian personalized feature interaction selection
 
 ## Requirement
 - pytrec_eval (https://github.com/cvangysel/pytrec_eval)
+- pytorch 1.0
 
 **sample run**
 ```python
