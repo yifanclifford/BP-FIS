@@ -16,5 +16,5 @@ python personal.py -h
 
 ```python
 cd code
-python personal.py PFM --gpu --rank --batch 128 --dir ../dataset -d movielens
+python personal.py PFM --gpu --rank --batch 128 --dir ../dataset -d movielens --save
 ```
